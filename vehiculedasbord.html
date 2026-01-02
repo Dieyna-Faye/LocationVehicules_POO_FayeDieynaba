@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion Véhicules - AutoLoc Pro</title>
+    <link rel="stylesheet" href="vehiculedasbord.css">
+    
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="logo-section">
+            <div class="logo">
+                <h1>AutoLoc Pro</h1>
+                <p>Gestion Premium</p>
+            </div>
+        </div>
+        
+        <div class="menu">
+            <div class="menu-label">Menu Principal</div>
+            <div class="menu-item">
+                <span class="menu-icon">📊</span>
+                <span>Dashboard</span>
+            </div>
+            <div class="menu-item active">
+                <span class="menu-icon">🚙</span>
+                <span>Véhicules</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-icon">👥</span>
+                <span>Clients</span>
+            </div>
+            <div class="menu-item">
+                <span class="menu-icon">📋</span>
+                <span>Locations</span>
+            </div>
+            
+            <div class="menu-label" style="margin-top: 24px;">Analytiques</div>
+            <div class="menu-item">
+                <span class="menu-icon">📈</span>
+                <span>Statistiques</span>
+            </div>
+            
+            <div class="menu-label" style="margin-top: 24px;">Système</div>
+            <div class="menu-item">
+                <span class="menu-icon">⚙️</span>
+                <span>Paramètres</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <!-- TOP BAR -->
+        <div class="top-bar">
+            <div class="page-title-section">
+                <h1>Gestion des Véhicules</h1>
+                <div class="breadcrumb">
+                    Véhicules • <span>Liste complète</span> • Flotte active
+                </div>
+            </div>
+            
+            <button class="btn-primary">
+                <span>➕</span>
+                Ajouter un Véhicule
+            </button>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filters-card">
+            <div class="filters">
+                <input type="text" placeholder="🔍 Rechercher par marque, modèle ou immatriculation...">
+                <select>
+                    <option>Tous les types</option>
+                    <option>Citadine</option>
+                    <option>Berline</option>
+                    <option>SUV</option>
+                    <option>Utilitaire</option>
+                    <option>Sportive</option>
+                </select>
+                <select>
+                    <option>Tous les statuts</option>
+                    <option>Disponible</option>
+                    <option>Loué</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- VEHICLES GRID -->
+        <div class="vehicles-grid">
+            <!-- Véhicule 1 -->
+            <div class="vehicle-card">
+                <div class="vehicle-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500&h=300&fit=crop" alt="BMW Série 3" class="vehicle-image">
+                    <div class="status-badge-overlay disponible">Disponible</div>
+                </div>
+                <div class="vehicle-info">
+                    <div class="vehicle-header">
+                        <h3 class="vehicle-name">BMW Série 3</h3>
+                        <div class="vehicle-details">
+                            <span>🚗 Berline</span>
+                            <span>•</span>
+                            <span>AB-123-CD</span>
+                        </div>
+                    </div>
+                    <div class="vehicle-price-row">
+                        <div class="vehicle-price">
+                            <div class="price-label">Tarif journalier</div>
+                            <div class="price-value">85€<span class="price-unit">/jour</span></div>
+                        </div>
+                    </div>
+                    <div class="vehicle-actions">
+                        <button class="btn-action btn-edit">
+                            <span>✏️</span>
+                            Modifier
+                        </button>
+                        <button class="btn-action btn-delete">
+                            <span>🗑️</span>
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Véhicule 2 -->
+            <div class="vehicle-card">
+                <div class="vehicle-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500&h=300&fit=crop" alt="Audi Q5" class="vehicle-image">
+                    <div class="status-badge-overlay loue">Loué</div>
+                </div>
+                <div class="vehicle-info">
+                    <div class="vehicle-header">
+                        <h3 class="vehicle-name">Audi Q5</h3>
+                        <div class="vehicle-details">
+                            <span>🚙 SUV</span>
+                            <span>•</span>
+                            <span>EF-456-GH</span>
+                        </div>
+                    </div>
+                    <div class="vehicle-price-row">
+                        <div class="vehicle-price">
+                            <div class="price-label">Tarif journalier</div>
+                            <div class="price-value">95€<span class="price-unit">/jour</span></div>
+                        </div>
+                    </div>
+                    <div class="vehicle-actions">
+                        <button class="btn-action btn-edit">
+                            <span>✏️</span>
+                            Modifier
+                        </button>
+                        <button class="btn-action btn-delete">
+                            <span>🗑️</span>
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Véhicule 3 -->
+            <div class="vehicle-card">
+                <div class="vehicle-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=500&h=300&fit=crop" alt="Mercedes Classe A" class="vehicle-image">
+                    <div class="status-badge-overlay disponible">Disponible</div>
+                </div>
+                <div class="vehicle-info">
+                    <div class="vehicle-header">
+                        <h3 class="vehicle-name">Mercedes Classe A</h3>
+                        <div class="vehicle-details">
+                            <span>🚗 Berline</span>
+                            <span>•</span>
+                            <span>IJ-789-KL</span>
+                        </div>
+                    </div>
+                    <div class="vehicle-price-row">
+                        <div class="vehicle-price">
+                            <div class="price-label">Tarif journalier</div>
+                            <div class="price-value">80€<span class="price-unit">/jour</span></div>
+                        </div>
+                    </div>
+                    <div class="vehicle-actions">
+                        <button class="btn-action btn-edit">
+                            <span>✏️</span>
+                            Modifier
+                        </button>
+                        <button class="btn-action btn-delete">
+                            <span>🗑️</span>
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Véhicule 4 -->
+            <div class="vehicle-card">
+                <div class="vehicle-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1617654112368-307921291f42?w=500&h=300&fit=crop" alt="Peugeot 208" class="vehicle-image">
+                    <div class="status-badge-overlay disponible">Disponible</div>
+                </div>
+                <div class="vehicle-info">
+                    <div class="vehicle-header">
+                        <h3 class="vehicle-name">Peugeot 208</h3>
+                        <div class="vehicle-details">
+                            <span>🚗 Citadine</span>
+                            <span>•</span>
+                            <span>MN-012-OP</span>
+                        </div>
+                    </div>
+                    <div class="vehicle-price-row">
+                        <div class="vehicle-price">
+                            <div class="price-label">Tarif journalier</div>
+                            <div class="price-value">45€<span class="price-unit">/jour</span></div>
+                        </div>
+                    </div>
+                    <div class="vehicle-actions">
+                        <button class="btn-action btn-edit">
+                            <span>✏️</span>
+                            Modifier
+                        </button>
+                        <button class="btn-action btn-delete">
+                            <span>🗑️</span>
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Véhicule 5 -->
+            <div class="vehicle-card">
+                <div class="vehicle-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500&h=300&fit=crop" alt="Range Rover Sport" class="vehicle-image">
+                    <div class="status-badge-overlay disponible">Disponible</div>
+                </div>
+                <div class="vehicle-info">
+                    <div class="vehicle-header">
+                        <h3 class="vehicle-name">Range Rover Sport</h3>
+                        <div class="vehicle-details">
+                            <span>🚙 SUV Luxe</span>
+                            <span>•</span>
+                            <span>QR-345-ST</span>
+                        </div>
+                    </div>
+                    <div class="vehicle-price-row">
+                        <div class="vehicle-price">
+                            <div class="price-label">Tarif journalier</div>
+                            <div class="price-value">120€<span class="price-unit">/jour</span></div>
+                        </div>
+                    </div>
+                    <div class="vehicle-actions">
+                        <button class="btn-action btn-edit">
+                            <span>✏️</span>
+                            Modifier
+                        </button>
+                        <button class="btn-action btn-delete">
+                            <span>🗑️</span>
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Véhicule 6 -->
+            <div class="vehicle-card">
+                <div class="vehicle-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=500&h=300&fit=crop" alt="Volkswagen Golf" class="vehicle-image">
+                    <div class="status-badge-overlay loue">Loué</div>
+                </div>
+                <div class="vehicle-info">
+                    <div class="vehicle-header">
+                        <h3 class="vehicle-name">Volkswagen Golf</h3>
+                        <div class="vehicle-details">
+                            <span>🚗 Compacte</span>
+                            <span>•</span>
+                            <span>UV-678-WX</span>
+                        </div>
+                    </div>
+                    <div class="vehicle-price-row">
+                        <div class="vehicle-price">
+                            <div class="price-label">Tarif journalier</div>
+                            <div class="price-value">50€<span class="price-unit">/jour</span></div>
+                        </div>
+                    </div>
+                    <div class="vehicle-actions">
+                        <button class="btn-action btn-edit">
+                            <span>✏️</span>
+                            Modifier
+                        </button>
+                        <button class="btn-action btn-delete">
+                            <span>🗑️</span>
+                            Supprimer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
