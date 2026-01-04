@@ -114,6 +114,37 @@ public function getHistorique() {
     $stmt->execute(["%$term%", "%$term%", "%$term%"]);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+public function stores($data) {
+
+    $dateDebut = new DateTime($data['date_debut']);
+    $dateFin   = new DateTime($data['date_fin']);
+
+    $jours = $dateDebut->diff($dateFin)->days;
+    $jours = max(1, $jours);
+
+ 
+    require_once __DIR__ . '/Vehicule_crud.php';
+    $vehiculeCrud = new Vehicule_crud();
+    $prixJour = $vehiculeCrud->getPrixJourById($data['vehicule_id']);
+
+   
+    $prixTotal = $prixJour * $jours;
+
+   
+    $sql = "INSERT INTO locations 
+            (client_id, vehicule_id, date_debut, date_fin, prix_total, statut)
+            VALUES (?, ?, ?, ?, ?, 'en_cours')";
+
+    $stmt = $this->db->prepare($sql);
+    return $stmt->execute([
+        $data['client_id'],
+        $data['vehicule_id'],
+        $data['date_debut'],
+        $data['date_fin'],
+        $prixTotal
+    ]);
+}
+
 
 }
 ?>

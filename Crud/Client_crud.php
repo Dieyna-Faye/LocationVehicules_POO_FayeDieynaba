@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../config/Database.php';
+require_once __DIR__ . '/../models/Client.php';
 
 class Client_crud {
     private $db;
@@ -54,7 +55,7 @@ class Client_crud {
         $stmt = $this->db->prepare("DELETE FROM clients WHERE id=?");
         return $stmt->execute([$id]);
     }
-    
+
     public function search($term) {
     $sql = "SELECT * FROM clients WHERE nom LIKE ? OR email LIKE ? OR telephone LIKE ? ORDER BY id DESC";
     $stmt = $this->db->prepare($sql);

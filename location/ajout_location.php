@@ -9,21 +9,12 @@ $locationCrud = new Location_Crud();
 
 $vehicules = $vehiculeCrud->getAll();
 $clients = $clientCrud->getAll();
-$location = new Location($db);
-$vehicule = new Vehicule($db);
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    $location->ajouter($_POST);
-    $vehicule->rendreIndisponible($_POST['vehicule_id']);
-
-    header("Location: ../dasbordlocation.php");
-    exit;
-}
 
 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-    $locationCrud->store($_POST);
+    $locationCrud->stores($_POST);
     header('Location: ../dasbordloc.php');
     exit;
 }

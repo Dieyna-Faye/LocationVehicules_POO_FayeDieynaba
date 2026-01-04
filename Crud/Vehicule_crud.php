@@ -13,7 +13,6 @@ class Vehicule_crud {
         $this->db = $database->connect();
     }
 
-    
     public function getAll() {
         $stmt = $this->db->query("SELECT * FROM vehicules ORDER BY id DESC");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -88,7 +87,6 @@ class Vehicule_crud {
 
 
     public function update($id, $data) {
-   
     $vehicule = $this->getById($id);
     $imageName = $vehicule['image']; 
 
@@ -139,10 +137,23 @@ $stmt = $this->db->prepare(
         return $stmt->execute([$vehicule_id]);
     }
     
-    public function delete($id){
-        $stmt = $this->db->prepare("DELETE FROM vehicules WHERE id=?");
-        return $stmt->execute([$id]);
+    public function delete($id)
+    {
+    $check = $this->db->prepare(
+        "SELECT COUNT(*) FROM locations 
+         WHERE vehicule_id = ? AND statut = 'en_cours'"
+    );
+    $check->execute([$id]);
+
+    if ($check->fetchColumn() > 0) {
+        return "impossible";
     }
+
+    $stmt = $this->db->prepare("DELETE FROM vehicules WHERE id = ?");
+    return $stmt->execute([$id]);
+}
+
+
 
     public function getById($id){
     $stmt = $this->db->prepare("SELECT * FROM vehicules WHERE id=?");
@@ -184,8 +195,14 @@ public function filter($data){
     $stmt->execute($params);
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
-
+public function getPrixJourById($id)
+{
+    $stmt = $this->db->prepare(
+        "SELECT prix_jour FROM vehicules WHERE id = ?"
+    );
+    $stmt->execute([$id]);
+    return (float) $stmt->fetchColumn();
+}
 
 }
 ?>

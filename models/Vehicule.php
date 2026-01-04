@@ -20,7 +20,7 @@ abstract class Vehicule implements Louable {
 
     abstract public function getType(): string;
 
-    // Implémentation par défaut de Louable
+   
     public function calculerPrixLocation(int $jours): float {
         return $this->prixJour * $jours;
     }
